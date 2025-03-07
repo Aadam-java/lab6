@@ -1,5 +1,3 @@
-import java.util.Random;
-
 /**
  * This class implements a technical support system. It is the top level class 
  * in this project. The support system communicates via text input/output 
@@ -12,30 +10,11 @@ import java.util.Random;
  * 
  * @author     Michael Kölling and David J. Barnes
  * @version    0.1 (2016.02.29)
- * Q2: class documentations include sections such as class declaration, descriptions, method summaries,etc.
- * they help us understand the class its methods and how to use them.
- * Q3: I'd say they have the same use except the one with the int toffset just allows us to choose where
- * the code starts to check
- * Q4: endsWith(String suffix) and the return type is boolean
- * Q5: length() and the return type is int
- * Q6: I would say it is easy to find if you know what to look for since you need to know the methods name
- * however you could use google to find the methods name and then use java api to help explain it to you
- * Q7: public String trim() 
- * String text= "Goodbye!";
- * String trimmedtext=text.trim();
- * Q10: boolean
- * Q12: it generates random pseudo-numbers and is in the java util package
- * Random rand = new Random();
- * int randomInt = rand.nextInt();
- * Q15: nextInt(int bound), when calling nextInt(100)  the numbers generated will be any number 0 to 99
- * Q21: you can use it as instead of the random class however its said its better for cryptography.
- * random numbers are important for cryptographic security to ensure strong unpredictable keys to protect
- * against cyber attacks and hackings.
  */
 public class SupportSystem
 {
     private InputReader reader;
-    private Responder responder; 
+    private Responder responder;
     
     /**
      * Creates a technical support system.
@@ -59,9 +38,8 @@ public class SupportSystem
 
         while(!finished) {
             String input = reader.getInput();
-            input=input.trim();
-            input=input.toLowerCase();
-            if(input.equals("bye")) {
+
+            if(input.startsWith("bye")) {
                 finished = true;
             }
             else {
